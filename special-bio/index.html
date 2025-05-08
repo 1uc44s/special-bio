@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas</title>
+  <link rel="shortcut icon" href="fav.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    body {
+      background: url('./images/background.jpg') no-repeat center center fixed; /* ('') içerisini arka plan görselinizin yolu olarak değiştirin */
+      background-size: cover;
+      color: white;
+      height: 100vh;
+      overflow: hidden;
+    }   
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: transparent url('') repeat;
+      animation: starAnim 200s linear infinite;
+      opacity: 0.2;
+    }
+
+    @keyframes starAnim {
+      from {background-position: 0 0;}
+      to {background-position: 10000px 10000px;}
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .glass {
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 20px;
+      padding: 50px 40px;
+      backdrop-filter: blur(10px);
+      max-width: 480px;
+      width: 95%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      background: url('./images/profilPhoto.jpeg') no-repeat center; /* ('') içerisini profil fotosu görselinizin yolu olarak değiştirin */
+      background-size: cover;
+    }
+
+    h1 {
+      font-size: 2.4em;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1.1em;
+    }
+
+    .location {
+      font-size: 0.9em;
+      color: #aaa;
+    }
+
+    .links {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .links a {
+      color: white;
+      font-size: 1.6em;
+      transition: transform 0.2s;
+    }
+
+    .links a:hover {
+      transform: scale(1.2);
+      color: #1db954;
+    }
+
+
+
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Videoyu ekran boyutlarına göre kesmeden yerleştirir */
+      z-index: -9999; /* Videoyu ekranın en arkasına alıyoruz */
+      visibility: hidden; /* Videoyu başlangıçta görünmez yapıyoruz */
+    }
+  </style>
+<script>
+    const msg = "@1uc44s"; //"" tırnak içini istediğin gibi düzenle
+    let index = 0;
+    let reverse = false;
+  
+    setInterval(() => {
+      document.title = msg.substring(0, index);
+  
+      if (!reverse) {
+        index++;
+        if (index > msg.length) {
+          reverse = true;
+          setTimeout(() => {}, 1000);
+        }
+      } else {
+        index--;
+        if (index < 0) {
+          reverse = false;
+        }
+      }
+    }, 250);
+  </script>
+  
+
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="container">
+    <div class="glass">
+      <div class="avatar"></div>
+      <h1>1uc44s</h1> <!-- isim istediğiniz gibi değişin -->
+      <p>para beni bozar bebeğim - always money</p> <!-- açıklama istediğiniz gibi değişin -->
+      <div class="location"><i class="fa-solid fa-location-dot"></i> Uranüs</div>
+
+      <div class="links">
+        <a href="https://spotify.com/user/316crq43ubf5qf7767sv66ca7c44?si=c83e037e26ca4166" target="_blank"><i class="fab fa-spotify"></i></a> <!-- href="" tırnak içine link yapıştırın -->
+        <a href="https://discord.com/wXBPwfSwvB" target="_blank"><i class="fab fa-discord"></i></a> <!-- fontawesome sitesinden icon alıp iconları değişe bilirsiniz sadece <i> leri silin ve yenisini ekleyin -->
+        <a href="https://github.com/1uc44s" target="_blank"><i class="fab fa-github"></i></a> <!-- <a> yı kopyala yapıştır yaparak iconları çoğaltabilirsiniz -->
+        <a href="https://adeus.com.tr/" target="_blank"><i class="fa-solid fa-globe"></i></i></a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
